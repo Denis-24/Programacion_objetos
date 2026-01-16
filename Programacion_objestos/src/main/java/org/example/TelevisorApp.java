@@ -12,6 +12,12 @@ public class TelevisorApp {
         tv1.bajarVolumen();
 
         tv1.getVolumen();
+        System.out.println();
+
+        Televisor tv2 = new Televisor();
+
+        System.out.println(tv2.getCanal());
+        System.out.println(tv2.getVolumen());
 
     }
 }
