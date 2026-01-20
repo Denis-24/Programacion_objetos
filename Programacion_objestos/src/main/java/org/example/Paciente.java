@@ -9,6 +9,7 @@ public class Paciente {
     private static final int INFRAPESO = -1;
     private static final int PESO_IDEAL = 0;
     private static final int SOBREPESO = 1;
+    private static final int MAYORIA_EDAD = 18;
 
     private String nombre;
     private int edad;
@@ -21,9 +22,16 @@ public class Paciente {
         this.nombre = nombre;
         this.edad= edad;
         dni= generarDNI();
-        this.sexo=sexo;
+        this.sexo=validarGenero(sexo);
         this.peso=peso;
         this.altura=altura;
+    }
+
+    public Paciente(String nombre, int edad, char sexo){
+        this.nombre = nombre;
+        this.edad= edad;
+        dni= generarDNI();
+        this.sexo=validarGenero(sexo);
     }
 
     private String generarDNI(){
@@ -60,6 +68,44 @@ public class Paciente {
 
     public Paciente(){
         this(null, 0,DEF_SEXO,0.0,0);
+    }
+
+    @Override
+    public String toString(){
+        return ("Nombre: " + nombre +
+                " Edad: " + edad +
+                " DNI: " + dni +
+                " Sexo: " + sexo +
+                " Peso: " + peso +
+                " Altura: " + altura);
+    }
+
+
+    public void Informacion(){
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("DNI: " + dni);
+        System.out.println("Sexo: " + sexo);
+        System.out.println("Peso: " + peso);
+        System.out.println("Altura: " + altura);
+    }
+
+    public boolean esMayorDeEdad(){
+        if (edad >= MAYORIA_EDAD){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    private char validarGenero(char genero){
+
+        if (genero == 'H'|| genero=='M'){
+            return genero;
+        }else {
+            return DEF_SEXO;
+        }
+
     }
 
 
