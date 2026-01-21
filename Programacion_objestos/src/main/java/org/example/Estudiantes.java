@@ -2,6 +2,8 @@ package org.example;
 
 public class Estudiantes {
 
+    private static final String CORREO_FROMATO = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
+
     private static int contadorEstudiantes = 0;
 
     private String nombre;
@@ -9,18 +11,31 @@ public class Estudiantes {
     private int nia;
     private String email;
 
-    public Estudiantes(String nombre, String curso, String emial){
+    public Estudiantes(String nombre, String curso, String email){
 
         this.nombre=nombre;
         this.curso=curso;
-        this.email=emial;
-        nia = ++contadorEstudiantes;
+        this.email= email;
+        setNia();
 
     }
 
     public Estudiantes(String nombre){
         this(nombre,"","");
 
+    }
+
+    public static int obtenerTotalEstudiantes(){
+        return contadorEstudiantes;
+
+    }
+
+    public static boolean validaremail(String correo){
+        if (correo.matches(CORREO_FROMATO)){
+            return true;
+        }else {
+            return false;
+        }
     }
 
 
@@ -45,8 +60,8 @@ public class Estudiantes {
         return nia;
     }
 
-    public void setNia(int nia) {
-        this.nia = nia;
+    private void setNia() {
+        nia = ++contadorEstudiantes ;
     }
 
     public String getEmail() {

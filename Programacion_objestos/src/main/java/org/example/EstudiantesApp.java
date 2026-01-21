@@ -14,6 +14,11 @@ public class EstudiantesApp {
         System.out.println(pedro.getNia());
         System.out.println(pedro);
 
+        System.out.println("Hay " + Estudiantes.obtenerTotalEstudiantes() + " estudiantes.");
+
+        System.out.println(Estudiantes.validaremail("denis@mutxamel.com"));
+        System.out.println(Estudiantes.validaremail("denis@alu.edu.gva.es"));
+
 
     }
 }
