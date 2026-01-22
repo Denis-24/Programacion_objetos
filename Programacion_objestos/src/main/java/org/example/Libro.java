@@ -2,10 +2,10 @@ package org.example;
 
 public class Libro {
 
-    private static final int CANTIDAD_LIBROS=0;
-    private static final int LIBROS_DISPONIBLES =0;
-    private static final boolean DEF_DISPONIBLE=true;
+    private static  int CANTIDAD_LIBROS=0;
+    private static  int LIBROS_DISPONIBLES =0;
     private static int contadorLibros = 0;
+    private static final String CADENA_ID = "LIB ";
 
     private String titulo;
     private String autor;
@@ -16,13 +16,17 @@ public class Libro {
     public Libro(String titulo, String autor){
         this.titulo=titulo;
         this.autor=autor;
-        id=generadorID();
-        setDisponibilidad();
+        generadorID();
+        disponibilidad=true;
+        CANTIDAD_LIBROS++;
+        LIBROS_DISPONIBLES++;
+        id = generadorID();
 
     }
 
-    public String generadorID(){
+    private String generadorID(){
         id="LIB " + (++contadorLibros);
+        return CADENA_ID + CANTIDAD_LIBROS;
         
     }
 
@@ -55,11 +59,50 @@ public class Libro {
     }
 
     public void setDisponibilidad() {
-        disponibilidad = DEF_DISPONIBLE;
+        disponibilidad = true;
     }
 
+    public void prestar(){
 
+        if (disponibilidad) {
+            disponibilidad = false;
+            System.out.println("El libro " + titulo + " ha sido prestado.");
+            LIBROS_DISPONIBLES--;
+        }else {
+            System.out.println("El libro " + titulo + " no esta diponible");
+        }
 
+    }
 
+    public void devolver(){
+        if (!disponibilidad){
+            disponibilidad=true;
+            System.out.println("El libro " + titulo + " ha sid devuelto.");
+            LIBROS_DISPONIBLES++;
+        }else {
+            System.out.println("El libro "+ titulo + " esta disponible. No se puede devolver.");
+        }
+    }
 
+    public boolean estaDisponible(){
+        return disponibilidad;
+    }
+
+    public static int getLibrosDisponibles() {
+        return LIBROS_DISPONIBLES;
+    }
+
+    public static int getCantidadLibros() {
+        return CANTIDAD_LIBROS;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", id='" + id + '\'' +
+                ", disponibilidad=" + disponibilidad +
+                '}';
+    }
 }
