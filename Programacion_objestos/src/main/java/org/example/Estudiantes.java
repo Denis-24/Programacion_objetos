@@ -10,6 +10,7 @@ public class Estudiantes {
     private String curso;
     private int nia;
     private String email;
+    private Libro libro;
 
     public Estudiantes(String nombre, String curso, String email){
 
@@ -17,6 +18,7 @@ public class Estudiantes {
         this.curso=curso;
         this.email= email;
         setNia();
+        libro=null;
 
     }
 
@@ -72,6 +74,14 @@ public class Estudiantes {
         this.email = email;
     }
 
+    public Libro getLibro() {
+        return libro;
+    }
+
+    public void setLibro(Libro libro) {
+        this.libro = libro;
+    }
+
     @Override
     public String toString() {
         return "Estudiantes{" +
@@ -79,6 +89,7 @@ public class Estudiantes {
                 ", curso='" + curso + '\'' +
                 ", nia=" + nia +
                 ", email='" + email + '\'' +
+                ", libro=" + libro +
                 '}';
     }
 }

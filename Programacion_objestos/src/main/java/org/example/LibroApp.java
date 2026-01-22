@@ -8,10 +8,6 @@ public class LibroApp {
 
         System.out.println(divina_comedia);
 
-        divina_comedia.prestar();
-        divina_comedia.devolver();
-        divina_comedia.prestar();
-
         System.out.println("Libros disponibles: " + Libro.getLibrosDisponibles());
         System.out.println("Libros totales: " + Libro.getCantidadLibros());
 

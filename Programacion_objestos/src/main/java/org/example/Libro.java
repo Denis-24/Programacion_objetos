@@ -11,6 +11,7 @@ public class Libro {
     private String autor;
     private String id;
     private Boolean disponibilidad;
+    private Estudiantes estudiantesPrestado;
 
 
     public Libro(String titulo, String autor){
@@ -21,6 +22,7 @@ public class Libro {
         CANTIDAD_LIBROS++;
         LIBROS_DISPONIBLES++;
         id = generadorID();
+        estudiantesPrestado = null;
 
     }
 
@@ -62,23 +64,27 @@ public class Libro {
         disponibilidad = true;
     }
 
-    public void prestar(){
+    public void prestar(Estudiantes estudiantes){
 
         if (disponibilidad) {
             disponibilidad = false;
-            System.out.println("El libro " + titulo + " ha sido prestado.");
+            System.out.println("El libro " + titulo + " ha sido prestado a " + estudiantesPrestado.getNombre() + " del curso " + estudiantesPrestado.getCurso());
             LIBROS_DISPONIBLES--;
+            estudiantesPrestado = estudiantes;
+            estudiantes.setLibro(this);
+        } else if (estudiantes.getLibro()==null) {
+
         }else {
             System.out.println("El libro " + titulo + " no esta diponible");
         }
 
-    }
-
     public void devolver(){
         if (!disponibilidad){
             disponibilidad=true;
-            System.out.println("El libro " + titulo + " ha sid devuelto.");
+            System.out.println("El libro " + titulo + " ha sid devuelto por " + estudiantesPrestado.getNombre() + " de curso " + estudiantesPrestado.getCurso());
             LIBROS_DISPONIBLES++;
+            estudiantesPrestado.setLibro(null);
+            estudiantesPrestado=null;
         }else {
             System.out.println("El libro "+ titulo + " esta disponible. No se puede devolver.");
         }
@@ -96,6 +102,15 @@ public class Libro {
         return CANTIDAD_LIBROS;
     }
 
+
+    public Estudiantes getEstudiantesPrestado() {
+        return estudiantesPrestado;
+    }
+
+    public static int getContadorLibros() {
+        return contadorLibros;
+    }
+
     @Override
     public String toString() {
         return "Libro{" +
@@ -103,6 +118,7 @@ public class Libro {
                 ", autor='" + autor + '\'' +
                 ", id='" + id + '\'' +
                 ", disponibilidad=" + disponibilidad +
+                ", estudiantesPrestado=" + estudiantesPrestado +
                 '}';
     }
 }

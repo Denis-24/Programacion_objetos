@@ -19,6 +19,21 @@ public class EstudiantesApp {
         System.out.println(Estudiantes.validaremail("denis@mutxamel.com"));
         System.out.println(Estudiantes.validaremail("denis@alu.edu.gva.es"));
 
+        Libro divina_comedia = new Libro("Divina Comedia", "Dante");
+
+        System.out.println(divina_comedia);
+
+//        divina_comedia.prestar(pedro);
+//        divina_comedia.devolver();
+//        divina_comedia.prestar(pedro);
+
+        System.out.println("Libros disponibles: " + Libro.getLibrosDisponibles());
+        System.out.println("Libros totales: " + Libro.getCantidadLibros());
+
+        System.out.println(divina_comedia);
+
+        System.out.println(divina_comedia.getEstudiantesPrestado());
+
 
     }
 }
