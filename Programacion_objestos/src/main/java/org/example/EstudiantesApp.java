@@ -23,9 +23,9 @@ public class EstudiantesApp {
 
         System.out.println(divina_comedia);
 
-//        divina_comedia.prestar(pedro);
-//        divina_comedia.devolver();
-//        divina_comedia.prestar(pedro);
+        divina_comedia.prestar(pedro);
+        divina_comedia.devolver();
+        divina_comedia.prestar(pedro);
 
         System.out.println("Libros disponibles: " + Libro.getLibrosDisponibles());
         System.out.println("Libros totales: " + Libro.getCantidadLibros());

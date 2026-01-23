@@ -13,6 +13,11 @@ public class LibroApp {
 
         System.out.println(divina_comedia);
 
+        Estudiantes pedro = new Estudiantes("pedro");
+
+        divina_comedia.prestar(pedro);
+        divina_comedia.devolver();
+        divina_comedia.prestar(pedro);
 
 
 

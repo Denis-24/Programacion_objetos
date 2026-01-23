@@ -64,19 +64,18 @@ public class Libro {
         disponibilidad = true;
     }
 
-    public void prestar(Estudiantes estudiantes){
+    public void prestar(Estudiantes estudiantes) {
 
         if (disponibilidad) {
             disponibilidad = false;
-            System.out.println("El libro " + titulo + " ha sido prestado a " + estudiantesPrestado.getNombre() + " del curso " + estudiantesPrestado.getCurso());
+            System.out.println("El libro " + titulo + " ha sido prestado a " + estudiantes.getNombre() + " del curso " + estudiantes.getCurso());
             LIBROS_DISPONIBLES--;
             estudiantesPrestado = estudiantes;
             estudiantes.setLibro(this);
-        } else if (estudiantes.getLibro()==null) {
-
-        }else {
+        } else {
             System.out.println("El libro " + titulo + " no esta diponible");
         }
+    }
 
     public void devolver(){
         if (!disponibilidad){
