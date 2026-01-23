@@ -1,4 +1,4 @@
-package org.example;
+package Biblio;
 
 public class EstudiantesApp {
 
@@ -19,7 +19,9 @@ public class EstudiantesApp {
         System.out.println(Estudiantes.validaremail("denis@mutxamel.com"));
         System.out.println(Estudiantes.validaremail("denis@alu.edu.gva.es"));
 
-        Libro divina_comedia = new Libro("Divina Comedia", "Dante");
+        Editorial editorial = new Editorial("Milenium", "España");
+
+        Libro divina_comedia = new Libro("Divina Comedia", "Dante", editorial);
 
         System.out.println(divina_comedia);
 

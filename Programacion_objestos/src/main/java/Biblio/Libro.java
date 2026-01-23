@@ -1,4 +1,4 @@
-package org.example;
+package Biblio;
 
 public class Libro {
 
@@ -12,9 +12,10 @@ public class Libro {
     private String id;
     private Boolean disponibilidad;
     private Estudiantes estudiantesPrestado;
+    private Editorial editorial;
 
 
-    public Libro(String titulo, String autor){
+    public Libro(String titulo, String autor, Editorial editorial){
         this.titulo=titulo;
         this.autor=autor;
         generadorID();
@@ -23,6 +24,8 @@ public class Libro {
         LIBROS_DISPONIBLES++;
         id = generadorID();
         estudiantesPrestado = null;
+        this.editorial = editorial;
+
 
     }
 
@@ -66,13 +69,15 @@ public class Libro {
 
     public void prestar(Estudiantes estudiantes) {
 
-        if (disponibilidad) {
+        if (disponibilidad && estudiantes.getLibro() == null) {
             disponibilidad = false;
             System.out.println("El libro " + titulo + " ha sido prestado a " + estudiantes.getNombre() + " del curso " + estudiantes.getCurso());
             LIBROS_DISPONIBLES--;
             estudiantesPrestado = estudiantes;
             estudiantes.setLibro(this);
-        } else {
+        } else if (estudiantes.getLibro()!=null) {
+            System.out.println("El studiante " + estudiantes.getNombre() + " ya tiene un libro prestado");
+        }else {
             System.out.println("El libro " + titulo + " no esta diponible");
         }
     }
@@ -110,6 +115,7 @@ public class Libro {
         return contadorLibros;
     }
 
+
     @Override
     public String toString() {
         return "Libro{" +
@@ -118,6 +124,7 @@ public class Libro {
                 ", id='" + id + '\'' +
                 ", disponibilidad=" + disponibilidad +
                 ", estudiantesPrestado=" + estudiantesPrestado +
+                ", editorial=" + editorial +
                 '}';
     }
 }
