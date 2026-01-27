@@ -89,7 +89,7 @@ public class Estudiantes {
                 ", curso='" + curso + '\'' +
                 ", nia=" + nia +
                 ", email='" + email + '\'' +
-                ", libro=" + libro +
+                ", libro=" + libro.getTitulo() +
                 '}';
     }
 }

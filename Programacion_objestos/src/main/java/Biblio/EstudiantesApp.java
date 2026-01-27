@@ -7,12 +7,10 @@ public class EstudiantesApp {
         Estudiantes denis = new Estudiantes("denis","1dam","denis@gmial.com");
 
         System.out.println(denis.getNia());
-        System.out.println(denis);
 
         Estudiantes pedro = new Estudiantes("pedro");
 
         System.out.println(pedro.getNia());
-        System.out.println(pedro);
 
         System.out.println("Hay " + Estudiantes.obtenerTotalEstudiantes() + " estudiantes.");
 
@@ -27,7 +25,6 @@ public class EstudiantesApp {
 
         divina_comedia.prestar(pedro);
         divina_comedia.devolver();
-        divina_comedia.prestar(pedro);
 
         System.out.println("Libros disponibles: " + Libro.getLibrosDisponibles());
         System.out.println("Libros totales: " + Libro.getCantidadLibros());
@@ -35,6 +32,10 @@ public class EstudiantesApp {
         System.out.println(divina_comedia);
 
         System.out.println(divina_comedia.getEstudiantesPrestado());
+
+        Prestamo p1 = divina_comedia.prestar(pedro);
+
+        System.out.println("Fecha del prestamo: " + p1.getFecha());
 
 
     }
