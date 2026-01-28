@@ -1,17 +1,29 @@
 package Biblio;
 
+import java.util.ArrayList;
+
 public class Editorial {
 
     private String nombre;
     private String pais;
+    private ArrayList<Libro> libros;
 
     public Editorial(String nombre, String pais){
         this.nombre=nombre;
         this.pais=pais;
+        libros = new ArrayList<>();
     }
 
     public Editorial(){
 
+    }
+
+    public void insertarlistar(Libro libro){
+        libros.add(libro);
+    }
+
+    public void eliminardelalista(Libro libro){
+        libros.remove(libro);
     }
 
     public String getNombre() {

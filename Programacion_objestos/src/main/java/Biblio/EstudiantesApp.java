@@ -25,6 +25,7 @@ public class EstudiantesApp {
 
         divina_comedia.prestar(pedro);
         divina_comedia.devolver();
+        divina_comedia.prestar(denis);
 
         System.out.println("Libros disponibles: " + Libro.getLibrosDisponibles());
         System.out.println("Libros totales: " + Libro.getCantidadLibros());
@@ -33,9 +34,11 @@ public class EstudiantesApp {
 
         System.out.println(divina_comedia.getEstudiantesPrestado());
 
-        Prestamo p1 = divina_comedia.prestar(pedro);
+//        Prestamo p1 = divina_comedia.prestar(pedro);
+//
+//        System.out.println("Fecha del prestamo: " + p1.getFecha());
 
-        System.out.println("Fecha del prestamo: " + p1.getFecha());
+        System.out.println(denis.getListadelibro());
 
 
     }
