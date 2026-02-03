@@ -14,7 +14,13 @@
 > La practica consiste en una app
 
 ### 2.Estructura de clases
+#### Diagrama de clases UML
 
+
+#### Codigo de PlantUml
+
+#### Contenedor de las clases UML
+![]()
 
 ### 3. Programa principal
 
