@@ -20,7 +20,7 @@
 #### Codigo de PlantUml
 
 #### Contenedor de las clases UML
-![]()
+![](meida/inmobiliaria.png)
 
 ### 3. Programa principal
 
