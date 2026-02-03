@@ -1,0 +1,44 @@
+@startuml
+package inmobiliaria {
+
+    class Casa {
+        - String direccion
+        - ArrayList<Habitacion> listaHabitaciones
+        - Propietario propietario
+
+        + Casa(String direccion)
+        + crearHabitacion(String nombre, double metros)
+        + eliminarHabitacion(String nombre)
+        + mostrarHabitaciones()
+        + mostrarTodosLosElectrodomesticos()
+    }
+
+    class Habitacion {
+        - String nombre
+        - double metros
+        - ArrayList<Electrodomesticos> listaElectrodomesticos
+
+        + Habitacion(String nombre, double metros)
+        + crearElectrodomesticos(String nombre, double consumo)
+        + mostrarElectrodomesticos()
+    }
+
+    class Electrodomesticos {
+        - String nombre
+        - double consumo
+
+        + Electrodomesticos(String nombre, double consumo)
+    }
+
+    class Propietario {
+        - String nombre
+        - int edad
+
+        + Propietario(String nombre, int edad)
+    }
+
+    Casa "1" o--> "0..*" Habitacion
+    Habitacion "1" o--> "0..*" Electrodomesticos
+    Casa "1" o--> "1" Propietario
+}
+@enduml
