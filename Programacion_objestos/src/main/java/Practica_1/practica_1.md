@@ -20,7 +20,7 @@
 #### Codigo de PlantUml
 
 #### Contenedor de las clases UML
-![](/media/inmobiliaria.png)
+![](media/inmobiliaria.png)
 
 ### 3. Programa principal
 
