@@ -15,12 +15,12 @@
 
 ### 2.Estructura de clases
 #### Diagrama de clases UML
-
+![](media/inmobiliaria.png)
 
 #### Codigo de PlantUml
 
 #### Contenedor de las clases UML
-![](media/inmobiliaria.png)
+
 
 ### 3. Programa principal
 
