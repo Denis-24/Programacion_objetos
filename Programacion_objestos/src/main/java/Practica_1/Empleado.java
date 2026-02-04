@@ -2,7 +2,7 @@ package Practica_1;
 
 public class Empleado {
     private static final String CADENA_ID = "EP ";
-    private static int contadorEmpleados = 0;
+    private static int contadorEmpleados = 1;
 
     private String id;
     private String nombre;
@@ -12,16 +12,46 @@ public class Empleado {
         id= generadorID();
         contadorEmpleados++;
         this.nombre = nombre;
-
         this.cargo = cargo;
 
 
     }
 
+    public static int getContadorEmpleados() {
+        return contadorEmpleados;
+    }
+
+    public static void setContadorEmpleados(int contadorEmpleados) {
+        Empleado.contadorEmpleados = contadorEmpleados;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
 
     private String generadorID(){
-
-        return CADENA_ID + (++contadorEmpleados);
+        return CADENA_ID + contadorEmpleados;
     }
 
 
