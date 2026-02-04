@@ -18,7 +18,6 @@ public class Libro {
     public Libro(String titulo, String autor, Editorial editorial){
         this.titulo=titulo;
         this.autor=autor;
-        generadorID();
         disponibilidad=true;
         CANTIDAD_LIBROS++;
         LIBROS_DISPONIBLES++;
@@ -30,7 +29,7 @@ public class Libro {
     }
 
     private String generadorID(){
-        id="LIB " + (++contadorLibros);
+        id="LIB" + (++contadorLibros);
         return CADENA_ID + CANTIDAD_LIBROS;
         
     }
