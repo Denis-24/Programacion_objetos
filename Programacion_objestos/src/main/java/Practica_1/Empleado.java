@@ -12,7 +12,7 @@ public class Empleado {
         id= generadorID();
         contadorEmpleados++;
         this.nombre = nombre;
-        
+
         this.cargo = cargo;
 
 
