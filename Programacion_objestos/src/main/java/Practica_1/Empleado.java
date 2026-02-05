@@ -12,10 +12,17 @@ public class Empleado {
         id= generadorID();
         contadorEmpleados++;
         this.nombre = nombre;
-        this.cargo = cargo;
-
-
+        this.cargo = controlCargo(cargo);
     }
+
+    public String controlCargo(String cargo){
+        if (cargo == "director" || cargo == "técnico" || cargo == "presentador" || cargo == "colaborador"){
+            return cargo;
+        }else {
+            return "pte";
+        }
+    }
+
 
     public static int getContadorEmpleados() {
         return contadorEmpleados;
@@ -55,6 +62,12 @@ public class Empleado {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", cargo='" + cargo + '\'' +
+                '}';
+    }
 }

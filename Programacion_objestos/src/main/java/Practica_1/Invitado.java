@@ -1,8 +1,11 @@
 package Practica_1;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Invitado {
+    static Scanner teclado = new Scanner(System.in);
+
     private String nombre;
     private String profesion;
     private LocalDate fecha;
@@ -12,12 +15,26 @@ public class Invitado {
     public Invitado(String nombre, String profesion,LocalDate fecha, int temporada){
         this.nombre = nombre;
         this.profesion = profesion;
-        this.fecha = fecha;
+        setFecha(fecha);
         this.temporada = temporada;
     }
 
 
-
+    public int anyo(){
+        System.out.println("En que año tines el programa?");
+        int anyo  = teclado.nextInt();
+        return anyo;
+    }
+    public int mes(){
+        System.out.println("En que mes tienes el programa");
+        int mes = teclado.nextInt();
+        return mes;
+    }
+    public int dia(){
+        System.out.println("En que dia tienes el programa");
+        int dia = teclado.nextInt();
+        return dia;
+    }
 
     public String getNombre() {
         return nombre;
