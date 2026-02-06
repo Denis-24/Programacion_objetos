@@ -1,0 +1,62 @@
+@startuml
+
+class Cadena {
+    - nombre : String
+    - listaProgramas : ArrayList<Programa>
+
+    + Cadena(nombre : String)
+}
+
+class Programa {
+    - nombre : String
+    - cadena : Cadena
+    - temporadas : int
+    - listaEmpleados : ArrayList<Empleado>
+    - listaInvitados : ArrayList<Invitado>
+    - director : Empleado
+    - teclado : Scanner <<static>>
+    - invitadostemp : int <<static>>
+    - vecesInv : int <<static>>
+
+    + Programa(nombre : String, cadena : Cadena, temporadas : int)
+    + vecesInvitados(nombre : String) : void
+    + invitadosTemporarda(temporadas : int) : void
+    + anyadirEmpleado(empleado : Empleado) : void
+    + anyadirInvitado(invitado : Invitado) : void
+    + eliminarEmpleado(empleado : Empleado) : void
+    + eliminarInvitado(invitado : Invitado) : void
+    - nombreDirector() : String
+}
+
+class Empleado {
+    - id : String
+    - nombre : String
+    - cargo : String
+    - contadorEmpleados : int <<static>>
+    - CADENA_ID : String <<static>>
+
+    + Empleado(nombre : String, cargo : String)
+    + controlCargo(cargo : String) : String
+    - generadorID() : String
+}
+
+class Invitado {
+    - nombre : String
+    - profesion : String
+    - fecha : LocalDate
+    - temporada : int
+    - teclado : Scanner <<static>>
+
+    + Invitado(nombre : String, profesion : String, fecha : LocalDate, temporada : int)
+    + anyo() : int
+    + mes() : int
+    + dia() : int
+}
+
+Cadena "1" --> "*" Programa : contiene >
+Programa "1" --> "1" Cadena : pertenece a >
+Programa "1" --> "*" Empleado : empleados >
+Programa "1" --> "*" Invitado : invitados >
+Programa "1" --> "1" Empleado : director >
+
+@enduml

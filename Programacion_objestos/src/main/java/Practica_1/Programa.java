@@ -54,7 +54,7 @@ public class Programa {
 
     public void anyadirInvitado(Invitado invitado){
         if (listaInvitados.contains(invitado)){
-            System.out.println("El invitado ya esta en la lista.");
+            System.out.println("El invitado " + invitado.getNombre() + " ya esta en la lista.");
         }else {
             listaInvitados.add(invitado);
             System.out.println("El invitado llamado " + invitado.getNombre() + " se ha añadidio a la lista");
@@ -74,6 +74,7 @@ public class Programa {
 
     public void eliminarInvitado(Invitado invitado){
         if (listaInvitados.contains(invitado)){
+            listaInvitados.remove(invitado);
             System.out.println("El invitado llamado " + invitado.getNombre() + " a sido eliminado de la lista");
             invitadostemp--;
         }else {
