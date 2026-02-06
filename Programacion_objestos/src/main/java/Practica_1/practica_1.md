@@ -545,9 +545,10 @@ Link a programa [**Principal**](https://github.com/Denis-24/Programacion_objetos
 
 ### 4. Pruebas
 
-Link a las [Pruebas](https://gvaedu-my.sharepoint.com/:w:/r/personal/denricren_alu_edu_gva_es/_layouts/15/doc2.aspx?sourcedoc=%7B839F9103-1910-4EE9-9448-A13E8872986D%7D&file=Pracica_1_Rico_Renz_Denis.docx&action=default&mobileredirect=true&DefaultItemOpen=1&wdOrigin=APPHOME-WEB.DIRECT%2CAPPHOME-WEB.UNAUTH%2CAPPHOME-WEB.SHELL.SIGNIN%2CAPPHOME-WEB.JUMPBACKIN&wdPreviousSession=3d8dadcd-c822-4815-b29d-95bfa8852cb7&wdPreviousSessionSrc=AppHomeWeb&ct=1770392965494)
+Arhivo de las Pruebas: [Pracica_1_Rico_Renz_Denis.pdf](https://github.com/user-attachments/files/25131963/Pracica_1_Rico_Renz_Denis.pdf)
+
 
 ### 5. Entregas
 - [X] Codigo fuente en Github: [Link]()
-- [ ] Documentacion
-- [ ] Pruebas
+- [X] Documentacion
+- [X] Pruebas
