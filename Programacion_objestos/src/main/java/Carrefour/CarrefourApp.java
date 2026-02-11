@@ -1,5 +1,7 @@
 package Carrefour;
 
+import java.util.ArrayList;
+
 public class CarrefourApp {
     static void main(String[] args) {
         Cajero jorge = new Cajero("jorge",1800,147);
@@ -18,5 +20,21 @@ public class CarrefourApp {
         angel.anyadirArmas("Esposas");
 
         angel.mostrarInfo();
+
+        Persona manuel = new Cajero("manuel",2000,123);
+
+        ArrayList<Persona> listaEmpleados = new ArrayList<>();
+
+        listaEmpleados.add(manuel);
+        listaEmpleados.add(raul);
+
+        for (Persona persona : listaEmpleados){
+
+        }
+        fichar(manuel);
+        fichar(raul);
+    }
+    public static void fichar(Persona persona){
+        System.out.println("Fichando...");
     }
 }

@@ -1,0 +1,25 @@
+@startuml
+package Empresa {
+
+    class Empleado {
+        +realizarTarea() : void
+    }
+
+    class Desarrollador {
+        +realizarTarea() : void
+    }
+
+    class Diseñador {
+        +realizarTarea() : void
+    }
+
+    class Gerente {
+        +realizarTarea() : void
+    }
+
+    Empleado <|-- Desarrollador
+    Empleado <|-- Diseñador
+    Empleado <|-- Gerente
+}
+
+@enduml

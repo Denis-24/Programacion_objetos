@@ -1,0 +1,16 @@
+package Empresa;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class Diseñador extends Empleado{
+    public Diseñador(){
+
+    }
+
+    @Override
+    public void realizarTarea(){
+        System.out.println("Creando diseños gráficos y prototipos.");
+    }
+}
