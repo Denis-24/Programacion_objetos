@@ -29,10 +29,19 @@ public class CarrefourApp {
         listaEmpleados.add(raul);
 
         for (Persona persona : listaEmpleados){
-
+            System.out.println(persona);
         }
         fichar(manuel);
         fichar(raul);
+
+        jorge.trabajar();
+        raul.trabajar();
+        angel.trabajar();
+
+
+
+
+
     }
     public static void fichar(Persona persona){
         System.out.println("Fichando...");

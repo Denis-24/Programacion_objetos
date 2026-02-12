@@ -1,6 +1,6 @@
 package Carrefour;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private double sueldo;
     private int codigo;
@@ -46,4 +46,6 @@ public class Persona {
     public void mostrarInfo(){
         System.out.println("Persona con codigo " + codigo + " y nombre " + nombre + " gana " + sueldo + "€");
     }
+
+    public abstract void trabajar();
 }
