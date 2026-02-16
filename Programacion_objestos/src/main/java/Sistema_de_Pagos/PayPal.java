@@ -20,6 +20,7 @@ public class PayPal extends MetodoPago{
 
     @Override
     public void procesarPago(double importe) {
+        if(saldo < importe) return;
         System.out.println("Procesando pago de " + importe + "€ con PayPal");
         System.out.println("....");
         System.out.println("Pago realizado con exito, muchas gracias por su compra.");
