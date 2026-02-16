@@ -4,10 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Random;
-import java.util.random.RandomGeneratorFactory;
+import java.util.Scanner;
 
 @Getter @Setter
 public class Bizum extends MetodoPago{
+    static Scanner teclado = new Scanner(System.in);
     private static final int MAX = 6;
     private String generadorpin = "";
     static Random aleatorio = new Random();
@@ -24,6 +25,8 @@ public class Bizum extends MetodoPago{
     @Override
     public void procesarPago(double importe) {
         System.out.println("Procesando pago de " + importe + "€ con Bizum");
+        System.out.println("....");
+        System.out.println("Pago realizado con exito, muchas gracias por su compra.");
     }
 
 
@@ -34,11 +37,7 @@ public class Bizum extends MetodoPago{
         pin = Integer.parseInt(generadorpin);
     }
 
-    public boolean validarBizum(){
-        if (telefono.matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")){
-            return true;
-        }else {
-            return false;
-        }
+    public int chivatoPin(){
+        return pin;
     }
 }
