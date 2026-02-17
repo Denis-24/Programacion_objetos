@@ -1,0 +1,69 @@
+@startuml
+
+package "Sistema_de_Pagos" {
+
+    abstract class MetodoPago {
+        + procesarPago(double importe)
+    }
+
+    class Bizum {
+        - static Scanner teclado
+        - static final int MAX
+        - String generadorpin
+        - static Random aleatorio
+        - String telefono
+        - int pin
+
+        + Bizum(String telefono)
+        + procesarPago(double importe)
+        + setPin()
+        + chivatoPin() : int
+    }
+
+    class PayPal {
+        - static final String FROMATO_CUENTA
+        - String cuenta
+        - double saldo
+
+        + PayPal(String cuenta)
+        + procesarPago(double importe)
+        + validarPayPal() : boolean
+    }
+
+    class TarjetaCredito {
+        - String nro_tarjeta
+        - String tipo
+
+        + TarjetaCredito(String nro_tarjeta, String tipo)
+        + procesarPago(double importe)
+    }
+
+    class Tienda {
+        - static Scanner teclado
+        - static final int MAX_TARJETA
+
+        + realizarPago(MetodoPago metodo)
+        + iniciarPago()
+        + preguntasMetodo() : String
+        + casos()
+        + pregntaNumTarjeta() : String
+        + preguntaTipoTajeta() : String
+        + controlTarjeta(TarjetaCredito t1)
+        + cuentaPayPal() : String
+        + controlPaypal(PayPal p1)
+        + preguntaTelBizum() : String
+        + preguntarPin() : int
+        + controlBizum(Bizum b1)
+    }
+
+    MetodoPago <|-- Bizum
+    MetodoPago <|-- PayPal
+    MetodoPago <|-- TarjetaCredito
+
+    Tienda ..> MetodoPago
+    Tienda ..> Bizum
+    Tienda ..> PayPal
+    Tienda ..> TarjetaCredito
+}
+
+@enduml
