@@ -35,7 +35,11 @@ public class PayPal extends MetodoPago{
         }
     }
 
-
+    /**
+     * @author Denis Rico
+     * @version 1.0
+     * @return valida que el formato del el correo de la cuenta de paypal introducido es correcto
+     */
     public boolean validarPayPal(){
         if (cuenta.matches(FROMATO_CUENTA)){
             return true;

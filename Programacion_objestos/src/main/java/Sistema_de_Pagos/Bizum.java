@@ -13,8 +13,10 @@ public class Bizum extends MetodoPago{
     private String generadorpin = "";
     static Random aleatorio = new Random();
 
+
     private String telefono;
     private int pin;
+
 
     public Bizum(String telefono){
         this.telefono = telefono;
@@ -29,7 +31,11 @@ public class Bizum extends MetodoPago{
         System.out.println("Pago realizado con exito, muchas gracias por su compra.");
     }
 
-
+    /**
+     * @author Denis Rico
+     * @version 1.0
+     * @return genera automaticamente un pin
+     */
     public void setPin() {
         for (int i = 0; i < MAX; i++) {
             generadorpin+=aleatorio.nextInt(0,10);

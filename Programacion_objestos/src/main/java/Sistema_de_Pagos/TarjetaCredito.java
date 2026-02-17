@@ -9,6 +9,7 @@ public class TarjetaCredito extends MetodoPago{
     private String nro_tarjeta;
     private String tipo;
 
+
     public TarjetaCredito(String nro_tarjeta, String tipo){
         this.nro_tarjeta = nro_tarjeta;
         this.tipo = tipo.toUpperCase();
