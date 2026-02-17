@@ -88,7 +88,7 @@ public class Tienda{
      */
     public static String preguntaTipoTajeta(){
         System.out.println("Introduce el tipo de tarjeta (Visa, Mastercard, MAESTRO)");
-        String tipo = teclado.nextLine();
+        String tipo = teclado.nextLine().toLowerCase();
         return tipo.toLowerCase();
     }
 
@@ -98,7 +98,7 @@ public class Tienda{
      * @return controla si los datos introducios anteriormente de la tarjeta son validos
      */
     public static void controlTarjeta(TarjetaCredito t1){
-        if ((preguntaTipoTajeta().equals("visa") || preguntaTipoTajeta().equals("mastercard") || preguntaTipoTajeta().equals("maestro")) && pregntaNumTarjeta().length()== MAX_TARJETA){
+        if ((t1.getTipo().equals("visa") || t1.getTipo().equals("mastercard") || t1.getTipo().equals("maestro")) && t1.getNro_tarjeta().length()== MAX_TARJETA){
             realizarPago(t1);
         }else {
             System.out.println("Los datos de tu tarjetra son incorrectos.");
