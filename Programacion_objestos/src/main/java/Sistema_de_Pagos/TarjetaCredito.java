@@ -5,7 +5,6 @@ import lombok.Setter;
 
 @Getter @Setter
 public class TarjetaCredito extends MetodoPago{
-    private final int tamanyo_tarjeta = 16;
 
     private String nro_tarjeta;
     private String tipo;

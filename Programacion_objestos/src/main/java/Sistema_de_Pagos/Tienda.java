@@ -32,7 +32,7 @@ public class Tienda{
     public static void casos(){
         switch (preguntasMetodo()){
             case "tarjeta":
-                TarjetaCredito t1 = new TarjetaCredito(pregntanumTarjeta(),preguntaTipoTajeta());
+                TarjetaCredito t1 = new TarjetaCredito(pregntaNumTarjeta(),preguntaTipoTajeta());
                 controlTarjeta(t1);
                 break;
             case "paypal":
@@ -41,7 +41,7 @@ public class Tienda{
                 break;
             case "bizum":
                 Bizum b1 = new Bizum(preguntaTelBizum());
-                System.out.println(b1.chivatoPin());
+                System.out.println("Chivato: " + b1.chivatoPin());
                 preguntarPin();
                 controlBizum(b1);
                 break;
@@ -50,21 +50,21 @@ public class Tienda{
         }
     }
 
-    public static String pregntanumTarjeta(){
+    public static String pregntaNumTarjeta(){
         System.out.println("Cual es el numero de tu tarjeta");
         String num = teclado.nextLine();
         return num;
     }
     public static String preguntaTipoTajeta(){
-        System.out.println("Introduce el tipo de tajeta (Visa, Mastercard, MAESTRO)");
+        System.out.println("Introduce el tipo de tarjeta (Visa, Mastercard, MAESTRO)");
         String tipo = teclado.nextLine();
         return tipo.toLowerCase();
     }
     public static void controlTarjeta(TarjetaCredito t1){
-        if ((preguntaTipoTajeta().matches("visa") || preguntaTipoTajeta().matches("mastercard") || preguntaTipoTajeta().matches("maestro")) && pregntanumTarjeta().length()== MAX_TARJETA){
+        if ((preguntaTipoTajeta().equals("visa") || preguntaTipoTajeta().equals("mastercard") || preguntaTipoTajeta().equals("maestro")) && pregntaNumTarjeta().length()== MAX_TARJETA){
             realizarPago(t1);
         }else {
-            System.out.println("Los datos de tu taretra son incorrectos.");
+            System.out.println("Los datos de tu tarjetra son incorrectos.");
         }
     }
 
@@ -94,7 +94,7 @@ public class Tienda{
         return pin;
     }
     public static void controlBizum(Bizum b1){
-        if ((preguntaTelBizum().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) && preguntarPin()== b1.chivatoPin()){
+        if ((preguntaTelBizum().matches("[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]")) && preguntarPin() == b1.chivatoPin()){
             realizarPago(b1);
         }else {
             System.out.println("Los datos de bizum son incorrectos.");

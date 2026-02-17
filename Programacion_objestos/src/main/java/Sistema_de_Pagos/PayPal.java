@@ -4,6 +4,8 @@ import Tenis.Partido;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.SQLOutput;
+
 @Getter @Setter
 public class PayPal extends MetodoPago{
     private static final String FROMATO_CUENTA = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9+_.-]+.com$";
@@ -20,10 +22,17 @@ public class PayPal extends MetodoPago{
 
     @Override
     public void procesarPago(double importe) {
-        if(saldo < importe) return;
-        System.out.println("Procesando pago de " + importe + "€ con PayPal");
-        System.out.println("....");
-        System.out.println("Pago realizado con exito, muchas gracias por su compra.");
+        if(saldo < importe){
+            System.out.println("**ERROR**");
+            System.out.println("Motivo:");
+            System.out.println("Saldo insuficiente: " + saldo+ "€");
+            System.out.println("El importe a pagar es de " + importe + "€");
+            System.out.println("Te flatan: " + (importe-saldo)+ "€");
+        }else {
+            System.out.println("Procesando pago de " + importe + "€ con PayPal");
+            System.out.println("....");
+            System.out.println("Pago realizado con exito, muchas gracias por su compra.");
+        }
     }
 
 
