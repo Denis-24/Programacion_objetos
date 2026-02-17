@@ -347,7 +347,7 @@ Link a clase [**Metodo de pago**](https://github.com/Denis-24/Programacion_objet
 
 ### 4. Pruebas
 
-
+Archivo de las Pruebas: [Proyecto de sistema de pagos.pdf](https://github.com/user-attachments/files/25365688/Proyecto.de.sistema.de.pagos.pdf)
 
 
 ### 5. Entregas
