@@ -40,10 +40,10 @@ public class CuentaBancaria {
         return retiro;
     }
 
-    public void retirarDinero(double retiro){
-        if (retiro==0){
+    public void retirarDinero(double retiro) {
+        if (retiro == 0) {
             System.out.println("El retiro debe ser mayor de 0€");
-        }else {
+        } else {
             saldo = saldo - retiro;
             System.out.println("El retirado con exito. Saldo actual: " + saldo);
         }
