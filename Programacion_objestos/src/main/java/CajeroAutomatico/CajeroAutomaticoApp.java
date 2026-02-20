@@ -22,7 +22,7 @@ public class CajeroAutomaticoApp {
     public static void  opcionesCajero(String opcion){
         switch (opcion){
             case "1":
-                
+
         }
     }
 }
