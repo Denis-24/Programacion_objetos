@@ -2,13 +2,15 @@ package Practica2;
 
 public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
 
+    final private String FORMATO_FORMACION = "^[1-9]-[1-9]-[1-9]$";
+
     private Equipo equipo;
     private String formacionPreferida;
 
     public Entrenador(String nombre, int edad, Equipo equipo, String formacionPreferida) {
         super(nombre, edad);
         this.equipo = equipo;
-        this.formacionPreferida = formacionPreferida;
+        setFormacionPreferida(formacionPreferida);
     }
 
 
@@ -35,5 +37,13 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
     @Override
     public void celebrarGol() {
         System.out.println("El entrenador " + getNombre() + " esta celebrando el gola de su equipo " + equipo);
+    }
+
+    public void setFormacionPreferida(String formacionPreferida) {
+        if (formacionPreferida.matches(FORMATO_FORMACION)){
+            this.formacionPreferida = formacionPreferida;
+        }else {
+            System.out.println("El formato de la Formacion preferida no es corecto.");
+        }
     }
 }
