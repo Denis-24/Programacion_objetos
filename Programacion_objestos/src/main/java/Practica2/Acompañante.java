@@ -12,7 +12,7 @@ public class Acompañante extends MutxamelIFC{
     }
 
     public void animarEquipo(){
-        System.out.println("El acompalante esta animando al equipo.");
+        System.out.println("El acompañante esta animando al equipo.");
     }
 
     @Override
