@@ -53,7 +53,7 @@ public class Tienda{
         switch (preguntasMetodo()){
             case "tarjeta":
                 TarjetaCredito t1 = new TarjetaCredito(pregntaNumTarjeta(),preguntaTipoTajeta());
-                controlTarjeta(t1);
+//                controlTarjeta(t1);
                 break;
             case "paypal":
                 PayPal p1 = new PayPal(cuentaPayPal());
@@ -97,13 +97,13 @@ public class Tienda{
      * @version 1.0
      * @return controla si los datos introducios anteriormente de la tarjeta son validos
      */
-    public static void controlTarjeta(TarjetaCredito t1){
-        if ((t1.getTipo().equals("visa") || t1.getTipo().equals("mastercard") || t1.getTipo().equals("maestro")) && t1.getNro_tarjeta().length()== MAX_TARJETA){
-            realizarPago(t1);
-        }else {
-            System.out.println("Los datos de tu tarjetra son incorrectos.");
-        }
-    }
+//    public static void controlTarjeta(TarjetaCredito t1){
+//        if ((t1.getTipo().equals("visa") || t1.getTipo().equals("mastercard") || t1.getTipo().equals("maestro")) && t1.getNro_tarjeta().length()== MAX_TARJETA){
+//            realizarPago(t1);
+//        }else {
+//            System.out.println("Los datos de tu tarjetra son incorrectos.");
+//        }
+//    }
 
     /**
      * @author Denis Rico
