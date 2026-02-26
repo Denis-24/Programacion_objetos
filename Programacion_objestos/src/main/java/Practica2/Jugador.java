@@ -23,26 +23,37 @@ public class Jugador extends MutxamelIFC implements AccionesDeportivas{
 
     }
 
+    public static void setTeclado(Scanner teclado) {
+        Jugador.teclado = teclado;
+    }
+
+    public void setCategoria(Equipo categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setPosiciones(Posiciones posiciones) {
+        this.posiciones = posiciones;
+    }
 
 
     @Override
     public void entrenar() {
-        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion" + posiciones +  " esta entrenando.");
+        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion " + posiciones +  " esta entrenando.");
     }
 
     @Override
     public void jugarPartido(String rival) {
-        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion, esta entrenando.");
+        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion  " + posiciones + ", esta jugadno un partido contra " + rival);
     }
 
     @Override
     public void concentrarse() {
-        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion, se esta conecntrando.");
+        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion " + posiciones + ", se esta conecntrando.");
     }
 
     @Override
     public void viajes(String ciudad) {
-        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion, esta viajando a " + ciudad);
+        System.out.println("El jugador " + getNombre() + " con el dorsal " + dorsal + " que juega en la posicion " + posiciones + ", esta viajando a " + ciudad);
     }
 
     @Override
@@ -78,7 +89,7 @@ public class Jugador extends MutxamelIFC implements AccionesDeportivas{
                             this.categoria = categoria;
                         }
                     } catch (DorsalValido e) {
-                        System.out.println("El dorsal que has introducido ya esta en uso, por el jugador " + miembro);
+                        System.out.println("El dorsal que has introducido ya esta en uso, por el jugador " + miembro.getNombre());
                     }
                 }
             }

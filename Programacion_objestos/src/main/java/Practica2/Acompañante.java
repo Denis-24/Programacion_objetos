@@ -17,7 +17,7 @@ public class Acompañante extends MutxamelIFC{
 
     @Override
     public void concentrarse() {
-        System.out.println("Se han concentrado con el el quipo.");
+        System.out.println("El acompañante " + getNombre() + " se esta concentrado con el el quipo.");
     }
 
     @Override
@@ -28,5 +28,21 @@ public class Acompañante extends MutxamelIFC{
     @Override
     public void celebrarGol() {
         System.out.println("El acompañante " + getNombre() + " esta celebrando el gol.");
+    }
+
+    public Jugador getIntegrante() {
+        return integrante;
+    }
+
+    public void setIntegrante(Jugador integrante) {
+        this.integrante = integrante;
+    }
+
+    public String getParentesco() {
+        return parentesco;
+    }
+
+    public void setParentesco(String parentesco) {
+        this.parentesco = parentesco;
     }
 }

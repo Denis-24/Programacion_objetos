@@ -16,12 +16,12 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
 
     @Override
     public void entrenar() {
-        System.out.println("El equipo se ha concentrado.");
+        System.out.println("El entrenador " + getNombre() + " esta preparando un entrenamineto para su equipo " + equipo);
     }
 
     @Override
     public void jugarPartido(String rival) {
-        System.out.println("El entrenador + " + getNombre() + " va a jugar un pratido con su equipo " + equipo + " contra " + rival);
+        System.out.println("El entrenador " + getNombre() + " va a jugar un pratido con su equipo " + equipo + " contra " + rival);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
 
     @Override
     public void viajes(String ciudad) {
-        System.out.println("El entrenador " + getNombre() + " esta viajando a " + ciudad + " con su equipo" + equipo);
+        System.out.println("El entrenador " + getNombre() + " esta viajando a " + ciudad + " con su equipo " + equipo);
     }
 
     @Override
@@ -45,5 +45,21 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
         }else {
             System.out.println("El formato de la Formacion preferida no es corecto.");
         }
+    }
+
+    public String getFORMATO_FORMACION() {
+        return FORMATO_FORMACION;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
+    }
+
+    public String getFormacionPreferida() {
+        return formacionPreferida;
     }
 }

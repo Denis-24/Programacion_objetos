@@ -1,5 +1,8 @@
 package Dispositivos_Inteligentes;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 
 public class DispositivosApp {
