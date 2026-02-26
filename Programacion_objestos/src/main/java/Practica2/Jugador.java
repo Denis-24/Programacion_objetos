@@ -1,8 +1,12 @@
 package Practica2;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@Getter @Setter
 public class Jugador extends MutxamelIFC implements AccionesDeportivas{
 
     static private Scanner teclado = new Scanner(System.in);
@@ -74,7 +78,7 @@ public class Jugador extends MutxamelIFC implements AccionesDeportivas{
                             this.categoria = categoria;
                         }
                     } catch (DorsalValido e) {
-                        System.out.println("El dorsal que has introducido ya esta en uso, por el jugador " + miembro.getNombre());
+                        System.out.println("El dorsal que has introducido ya esta en uso, por el jugador " + miembro);
                     }
                 }
             }
