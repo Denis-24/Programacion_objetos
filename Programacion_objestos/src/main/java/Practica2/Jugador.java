@@ -68,11 +68,6 @@ public class Jugador extends MutxamelIFC implements AccionesDeportivas{
     public Equipo getCategoria() {
         return categoria;
     }
-    public int preguntaDorsal(){
-        System.out.println("Introduce el numero del dorsal:");
-        int dorsal1 = teclado.nextInt();
-        return dorsal1;
-    }
 
     public void setDorsal(int dorsal,ArrayList<MutxamelIFC> listaMiembros, Equipo categoria) {
         if (listaMiembros.isEmpty()){

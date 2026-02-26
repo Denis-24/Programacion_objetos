@@ -11,6 +11,7 @@ public class PracticaApp {
     static ArrayList<Jugador>listaJugadores = new ArrayList<>();
 
     public static String mantenimineto(){
+        System.out.println();
         System.out.println("[1]. Mantenimineto de jugadores");
         System.out.println("    Dentro podremos añadir jugadores, modificar datos y añadir acompañantes (solo seniors).");
         System.out.println("[2]. Mantenimineto de entrenadores (añadir-modifiar-salir)");
@@ -78,7 +79,8 @@ public class PracticaApp {
                 Jugador je = new Jugador(preguntarNombre(),preguntarEdad(),preguntarEquipo(),preguntarDorsal(),preguntarPosiciones(),listaMiembros);
                 listaJugadores.add(je);
                 listaMiembros.add(je);
-                System.out.println("El jugador " + je + " ha sido creado...");
+                System.out.println("El jugador " + je.getNombre() + " ha sido creado...");
+                break;
             case "2":
                 cambiarJugador(preguntaCambio());
                 break;
@@ -165,8 +167,6 @@ public class PracticaApp {
         System.out.println("Introduce el nuevo dorsal del jugador " + listaJugadores.get(num).getNombre());
         int dorsal = teclado.nextInt();
         listaJugadores.get(num).setDorsal(dorsal,listaMiembros,listaJugadores.get(num).getCategoria());
-        System.out.println("....");
-        System.out.println("El dorsal del jugador "  + listaJugadores.get(num).getNombre() + " ha sido cambiado a " + dorsal);
     }
 
 
@@ -252,13 +252,13 @@ public class PracticaApp {
         listaJugadores.add(j2);
         listaJugadores.add(j3);
         listaMiembros.add(j1);
-        Jugador j4 = new Jugador("Eric",21,Equipo.SENIOR,10,Posiciones.DEFENSA, listaMiembros);
-
-        j1.mostrarInfo();
-        j4.mostrarInfo();
-
+//        Jugador j4 = new Jugador("Eric",21,Equipo.SENIOR,10,Posiciones.DEFENSA, listaMiembros);
+//
+//        j1.mostrarInfo();
+//        j4.mostrarInfo();
+//
 //        opciones();
-
+//
         for (MutxamelIFC miembro : listaMiembros){
             System.out.println();
             miembro.concentrarse();
