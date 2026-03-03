@@ -32,4 +32,20 @@ public class Masajista extends MutxamelIFC{
     public void celebrarGol() {
         System.out.println("El masajista " + getNombre() + " esta celebrando el gol...");
     }
+
+    public String getTitulacion() {
+        return titulacion;
+    }
+
+    public void setTitulacion(String titulacion) {
+        this.titulacion = titulacion;
+    }
+
+    public int getAnosExperiencia() {
+        return anosExperiencia;
+    }
+
+    public void setAnosExperiencia(int anosExperiencia) {
+        this.anosExperiencia = anosExperiencia;
+    }
 }
