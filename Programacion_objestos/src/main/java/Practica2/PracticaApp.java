@@ -52,16 +52,16 @@ public class PracticaApp {
 
     static void main(String[] args) {
 
-        Jugador j1 = new Jugador("Denis",19,Equipo.SENIOR,10,Posiciones.CENTROCAMPISTA, listaMiembros);
-        Jugador j2 = new Jugador("Angel",19,Equipo.SENIOR,18,Posiciones.DELANTERO, listaMiembros);
-        Jugador j3 = new Jugador("Jacobo",50,Equipo.SENIOR,1,Posiciones.PORTERO, listaMiembros);
+        Jugador j1 = new Jugador("Denis",19,Equipo.SENIOR,Posiciones.CENTROCAMPISTA, listaMiembros);
+        Jugador j2 = new Jugador("Angel",19,Equipo.SENIOR,Posiciones.DELANTERO, listaMiembros);
+        Jugador j3 = new Jugador("Jacobo",50,Equipo.SENIOR,Posiciones.PORTERO, listaMiembros);
         Entrenador e1 = new Entrenador("Adrian",30,Equipo.SENIOR,"4-3-3");
 
         listaJugadores.add(j1);
         listaJugadores.add(j2);
         listaJugadores.add(j3);
         listaMiembros.add(j1);
-        Jugador j4 = new Jugador("Eric",21,Equipo.SENIOR,10,Posiciones.DEFENSA, listaMiembros);
+        Jugador j4 = new Jugador("Eric",21,Equipo.SENIOR,Posiciones.DEFENSA, listaMiembros);
 
         j1.mostrarInfo();
         j4.mostrarInfo();

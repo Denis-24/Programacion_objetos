@@ -11,10 +11,10 @@ public class Jugador extends MutxamelIFC implements AccionesDeportivas{
     private int dorsal;
     private Posiciones posiciones;
 
-    public Jugador(String nombre, int edad, Equipo categoria, int dorsal, Posiciones posiciones, ArrayList<MutxamelIFC> listaMiembros) {
+    public Jugador(String nombre, int edad, Equipo categoria, Posiciones posiciones, ArrayList<MutxamelIFC> listaMiembros) {
         super(nombre, edad);
         this.categoria = categoria;
-        setDorsal(dorsal,listaMiembros, categoria);
+        setDorsal(listaMiembros, categoria);
         this.posiciones = posiciones;
 
     }
@@ -53,13 +53,10 @@ public class Jugador extends MutxamelIFC implements AccionesDeportivas{
     public Equipo getCategoria() {
         return categoria;
     }
-    public int preguntaDorsal(){
-        System.out.println("Introduce el numero del dorsal:");
-        int dorsal1 = teclado.nextInt();
-        return dorsal1;
-    }
 
-    public void setDorsal(int dorsal,ArrayList<MutxamelIFC> listaMiembros, Equipo categoria) {
+    public void setDorsal(ArrayList<MutxamelIFC> listaMiembros, Equipo categoria) {
+        System.out.println("Introduce el numero del dorsal:");
+        int dorsal = teclado.nextInt();
         if (listaMiembros.isEmpty()){
             this.dorsal = dorsal;
             this.categoria = categoria;
