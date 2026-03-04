@@ -16,7 +16,7 @@ public class Ejercicio_1_2 {
         System.out.println(listachar.peek());
         System.out.println(listachar.pop());
         System.out.println();
-
+        System.out.println(listachar);
 
         while (!listachar.isEmpty()){
             System.out.print(listachar.pop() + " - ");
