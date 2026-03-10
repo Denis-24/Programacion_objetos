@@ -21,7 +21,9 @@ public class Funcionario_App {
 
         System.out.println(pila);
 
-        for (int i = 0; i < pila.size(); i++) {
+        int tamanyo = pila.size();
+
+        for (int i = 0; i < tamanyo; i++) {
             if (!pila.isEmpty()){
                 System.out.println();
                 System.out.println("Informe numero " + (i+1) + ": ");
@@ -29,19 +31,22 @@ public class Funcionario_App {
                 System.out.println(pila);
             }
         }
-        System.out.println(pila.size());
+
+        System.out.println("-------------------------------------------------");
 
         Informe i6 = new Informe(Tipo.EMPRESARIAL);
         Informe i7 = new Informe(Tipo.PERSONAL);
         Informe i8 = new Informe(Tipo.ADMINISTRATIVO);
-        Informe i9 = new Informe(Tipo.ADMINISTRATIVO);
 
         pila.push(i6);
         pila.push(i7);
         pila.push(i8);
-        pila.push(i9);
 
-        for (int i = 0; i < pila.size(); i++) {
+        tamanyo = pila.size();
+
+        for (int i = 0; i < tamanyo; i++) {
+            System.out.println();
+            System.out.println("Informe numero " + (i+1) + ": ");
             System.out.println(pila.pop());
         }
         System.out.println(pila);
