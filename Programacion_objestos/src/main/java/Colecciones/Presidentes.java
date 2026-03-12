@@ -24,4 +24,12 @@ public class Presidentes {
     public int hashCode() {
         return Objects.hash(nombre, pais);
     }
+
+    @Override
+    public String toString() {
+        return "Presidentes{" +
+                "nombre='" + nombre + '\'' +
+                ", pais='" + pais + '\'' +
+                '}';
+    }
 }
