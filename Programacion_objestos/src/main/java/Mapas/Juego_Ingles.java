@@ -2,6 +2,7 @@ package Mapas;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Juego_Ingles {
 
@@ -1163,6 +1164,11 @@ public class Juego_Ingles {
         }
     }
     public static void  aleatorio(){
+        Set<String> listaaleatoria = diccionario.keySet();
+        String aleatorio[] = listaaleatoria.toArray(new String[0]);
+    }
+
+    public static void primeraLetraTraducir(){
 
     }
 
