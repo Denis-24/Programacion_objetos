@@ -4,7 +4,7 @@ import java.time.LocalTime;
 import java.util.Objects;
 
 
-public class Invitado {
+public class Invitado implements Comparable<Invitado>{
 
     private String nombre;
     private Integer edad;
@@ -55,28 +55,28 @@ public class Invitado {
     }
 
 
-//    @Override
-//    public int compareTo(Invitado o) {
-//        int comparar = hora.compareTo(o.getHora());
-//        if (comparar !=0){
-//            return comparar;
-//        }
-//
-//        comparar = edad.compareTo(o.getEdad());
-//        if (comparar !=0){
-//            return comparar;
-//        }
-//
-//
-//        return nombre.compareTo(o.getNombre());
-//    }
-
     @Override
-    public String toString() {
-        return "Invitado{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", hora=" + hora +
-                '}';
+    public int compareTo(Invitado o) {
+        int comparar = hora.compareTo(o.getHora());
+        if (comparar !=0){
+            return comparar;
+        }
+
+        comparar = edad.compareTo(o.getEdad());
+        if (comparar !=0){
+            return comparar;
+        }
+
+
+        return nombre.compareTo(o.getNombre());
     }
+
+//    @Override
+//    public String toString() {
+//        return "Invitado{" +
+//                "nombre='" + nombre + '\'' +
+//                ", edad=" + edad +
+//                ", hora=" + hora +
+//                '}';
+//    }
 }
