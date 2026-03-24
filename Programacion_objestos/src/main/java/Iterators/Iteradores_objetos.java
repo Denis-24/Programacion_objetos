@@ -17,7 +17,7 @@ public class Iteradores_objetos {
         while (it.hasNext()){
             Presidentes presi = it.next();
 
-            if (presi.getNombre().equals("Benja")){
+            if (presi.getNombre().equals("Benja Netanyahu")){
                 it.remove();
             }
         }

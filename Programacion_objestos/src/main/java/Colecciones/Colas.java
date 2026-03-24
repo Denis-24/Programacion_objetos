@@ -14,7 +14,10 @@ public class Colas {
 
         cola.offer("Blessd");
         cola.offer("Yatra");
+        cola.offer("Yatra");
         cola.offer("Morat");
+
+        System.out.println(cola);
 
         System.out.println(cola.poll());
         System.out.println(cola.peek());
