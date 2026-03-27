@@ -24,7 +24,7 @@ public class Cliente {
     }
 
     public void crearPedido(){
-        Pedido pedido1 = new Pedido();
+        pedido = new Pedido();
 
     }
 

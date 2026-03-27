@@ -13,7 +13,8 @@ public class Pedido {
     }
 
     public void actualizarImporteTotal(double importe){
-
+        importeTotal += importe;
+        System.out.println("Importe total del pedido: " + importeTotal + "€");
     }
 
     public void aplicarPromo3x2(){
