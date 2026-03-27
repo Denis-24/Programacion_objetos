@@ -25,11 +25,10 @@ public class Cliente {
 
     public void crearPedido(){
         pedido = new Pedido();
-
     }
 
     public void insertarProducto(Productos productos){
-
+        pedido.getPedido().put();
     }
 
 

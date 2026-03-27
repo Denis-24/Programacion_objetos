@@ -21,4 +21,17 @@ class PedidoTest {
         assertEquals(sumaImporteTotal,importeFinal);
     }
 
+
+    @Test
+    public void aplicarPromo10Test(){
+        Pedido pedido = new Pedido();
+        pedido.actualizarImporteTotal(100);
+
+        pedido.aplicarPromo10();
+        double valorFinal = pedido.getImporteTotal();
+        double valorComparable = 100 * 0.90;
+
+        assertEquals(valorFinal,valorComparable);
+    }
+
 }
