@@ -28,7 +28,7 @@ public class Cliente {
     }
 
     public void insertarProducto(Productos productos){
-        pedido.getPedido().put();
+//        pedido.getPedido().put(productos);
     }
 
 
